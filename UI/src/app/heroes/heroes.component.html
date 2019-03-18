@@ -1,0 +1,57 @@
+
+<h3>Select States</h3>
+<div>
+
+  <select class='select-option' required [(ngModel)]='stateSelected' (ngModelChange)='onStateSelected($event)'>
+    <option class='option' *ngFor='let state of states' [value]="state">{{state}}</option>
+
+  </select>
+</div>
+
+<h3>Select District</h3>
+<div>
+<select id="address" class='select-option' required [(ngModel)]='districtSelected' (ngModelChange)='onDistrictSelected($event)'>
+    <option class='option' *ngFor='let district of districts' [value]="district">{{district}}</option>
+
+  </select>
+
+</div>
+
+
+<h3>Select Crops</h3>
+<div>
+
+  <select class='select-option' required [(ngModel)]='cropSelected' (ngModelChange)='onCropSelected($event)'>
+    <option class='option' *ngFor='let crop of crops' [value]="crop">{{crop}}</option>
+
+  </select>
+</div>
+
+<h3>Select Year</h3>
+<div>
+
+  <select class='select-option' required [(ngModel)]='yearSelected' (ngModelChange)='onYearSelected($event)'>
+    <option class='option' *ngFor='let year of years' [value]="year">{{year}}</option>
+
+  </select>
+</div>
+
+<h3>Enter Area</h3>
+<input type="number" (keyup)="onAreaSelected($event)" [value]="areaSelected" >
+
+<h3>Select Season</h3>
+<div>
+
+  <select class='select-option' required [(ngModel)]='yearSelected' (ngModelChange)='onYearSelected($event)'>
+    <option class='option' *ngFor='let season of seasons' [value]="season">{{season}}</option>
+
+  </select>
+</div>
+
+<button type = "button" (click)="predict()">Predict</button>
+
+
+<h3> Prediction</h3>
+{{this.result}}
+
+
